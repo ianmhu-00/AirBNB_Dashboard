@@ -105,7 +105,7 @@ ui <- dashboardPage(skin = "red",
                                              p("The primary objective of this dashboard is to determine the most popular areas for AirBNB rentals and the following:"),
                                              HTML("<ul><li>", "Listing count and prices across boroughs, neighborhoods, and room types",
                                                   "<li>", "Average ratings + reviews",
-                                                  "<li>", "Market sizing and revenue forcasting", "</ul>"),
+                                                  "<li>", "Market sizing and revenue estimation", "</ul>"),
                                              h4("Data sources"),
                                              p(HTML("The data is sourced from Kaggle, <a href='https://www.kaggle.com/datasets/arianazmoudeh/airbnbopendata/data' target='_blank'>linked here</a>, dated from February 2022. Additionally, AirBNB offers publicly available quarterly data across a variety of cities and countries, <a href='https://insideairbnb.com/get-the-data/' target='_blank'>linked here</a>. Lastly, median asking rent data is taken from StreetEasy, <a href='https://streeteasy.com/blog/data-dashboard/?agg=Total&metric=Inventory&type=Sales&bedrooms=Any%20Bedrooms&property=Any%20Property%20Type&minDate=2010-01-01&maxDate=2025-02-01&area=Staten%20Island' target='_blank'>linked here</a>, dated Q1 2022.")),
                                              h4("Tabs"),
@@ -656,7 +656,9 @@ server <- function(input, output){
       scale_y_continuous(limits=c(0,7500),
                          breaks=seq(0,7500,1000),
                          expand=c(0,0)) +
-      labs(title="Gross Revenue against Median Asking Rent", x="Asking Rent", y="Gross Revenue") +
+      labs(title="Gross Revenue against Median Asking Rent", 
+           caption="Points above the red line suggest AirBNB rentals may be more profitable, whereas points below suggest long-term rentals may be more valuable.",
+           x="Asking Rent", y="Gross Revenue") +
       theme_clean() +
       theme(legend.position="bottom")
   })
