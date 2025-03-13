@@ -5,7 +5,7 @@ The primary objective of this dashboard is to determine the most popular areas f
 
 - Listing count and prices across boroughs, neighborhoods, and room types
 - Average ratings + reviews
-- Market sizing and revenue forcasting
+- Market sizing and revenue estimation
 
 Data sources
 The data is sourced from Kaggle, dated from February 2022. Additionally, AirBNB offers publicly available quarterly data across a variety of cities and countries. Lastly, median asking rent data is taken from StreetEasy, dated Q1 2022.
